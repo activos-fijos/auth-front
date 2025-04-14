@@ -1,7 +1,11 @@
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from './components/pages/LoginPage';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} /> {/* Ruta por defecto */}
+    </Routes>
   );
 }
 
