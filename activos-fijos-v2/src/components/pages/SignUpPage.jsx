@@ -4,8 +4,10 @@ import AuthAside from '../auth/AuthAside';
 import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import SignUpForm from '../auth/SignUpForm';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const SignUpPage = () => {
+  usePageTitle('Sing Up')
     return (
       <AuthLayout>
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
