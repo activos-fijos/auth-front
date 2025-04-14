@@ -38,7 +38,7 @@ const LoginForm = () => {
           </div>
 
           <div className="text-gray-500 text-center fw-semibold fs-6">
-            Not a Member yet? <a href="#" className="link-primary">Sign up</a>
+            Not a Member yet? <a href="/singup" className="link-primary">Sign up</a>
           </div>
         </form>
       </div>
