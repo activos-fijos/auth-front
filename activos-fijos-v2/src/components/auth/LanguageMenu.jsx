@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 
 const LanguageMenu = () => {
   const [currentLanguage, setCurrentLanguage] = useState({
-    name: "English",
+    name: "Inglés",
     flag: "united-states.svg",
   });
 
   const languages = [
-    { name: "English", flag: "united-states.svg" },
-    { name: "Spanish", flag: "spain.svg" },
-    { name: "German", flag: "germany.svg" },
-    { name: "Japanese", flag: "japan.svg" },
-    { name: "French", flag: "france.svg" },
+    { name: "Inglés", flag: "united-states.svg" },
+    { name: "Español", flag: "spain.svg" },
+    { name: "Alemán", flag: "germany.svg" },
+    { name: "Japonés", flag: "japan.svg" },
+    { name: "Francés", flag: "france.svg" },
   ];
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const LanguageMenu = () => {
         {languages.map((lang) => (
           <div key={lang.name} className="menu-item px-3">
             <a
-              href="#"
+              href="/"
               className="menu-link d-flex px-5"
               onClick={(e) => {
                 e.preventDefault();

@@ -17,18 +17,18 @@ const NewPasswordForm = () => {
       <div className="w-lg-500px p-10">
         <form className="form w-100" id="kt_new_password_form">
           <div class="text-center mb-10">
-            <h1 class="text-dark fw-bolder mb-3">Setup New Password</h1>
+            <h1 class="text-dark fw-bolder mb-3">Establecer nueva contraseña</h1>
             <div class="text-gray-500 fw-semibold fs-6">
-              Have you already reset the password ?
+              ¿Ya has restablecido la contraseña?
               <a href="/" class="link-primary fw-bold">
-                Sign in
+                Iniciar sesión
               </a>
             </div>
           </div>
           <PasswordInput
             className="fv-row mb-8"
             name="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
@@ -37,7 +37,7 @@ const NewPasswordForm = () => {
           <PasswordInput
             className="fv-row mb-8"
             name="newPassword"
-            placeholder="Repeat Password"
+            placeholder="Repetir contraseña"
             value={formData.newPassword}
             onChange={handleChance}
           />
@@ -49,12 +49,11 @@ const NewPasswordForm = () => {
                 name="toc"
                 value="1"
               />
-              <span class="form-check-label fw-semibold text-gray-700 fs-6 ms-1">
-                I Agree &
-                <a href="#" class="ms-1 link-primary">
-                  Terms and conditions
-                </a>
-                .
+              <span className="form-check-label fw-semibold text-gray-700 fs-base ms-1">
+                Yo acepto los
+                <span className="ms-1 link-primary cursor-pointer">
+                  Términos y condiciones
+                </span>
               </span>
             </label>
           </div>
@@ -63,7 +62,7 @@ const NewPasswordForm = () => {
               type="button"
               class="btn btn-primary"
             >
-              <span class="indicator-label">Submit</span>
+              <span class="indicator-label">Enviar</span>
               <span class="indicator-progress">
                 Please wait...
                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>

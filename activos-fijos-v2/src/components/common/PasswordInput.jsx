@@ -46,7 +46,7 @@ const PasswordInput = ({
         <div className="mb-1 mt-3">
           <div className="d-flex align-items-center mb-3">
             {[
-              { condition: meetsLength, label: "8+ chars" },
+              { condition: meetsLength, label: "8+ caracteres" },
               { condition: hasUpperCase, label: "A-Z" },
               { condition: hasNumber, label: "0-9" },
               { condition: hasSpecialChar, label: "!@#" },

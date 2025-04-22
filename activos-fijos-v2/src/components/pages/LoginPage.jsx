@@ -7,7 +7,7 @@ import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
 
 const LoginPage = () => {
-  usePageTitle('Login')
+  usePageTitle('Iniciar Sesión')
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">

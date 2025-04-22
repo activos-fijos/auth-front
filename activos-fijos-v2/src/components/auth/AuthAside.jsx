@@ -22,12 +22,12 @@ const AuthAside = () => {
         />
         
         <h1 className="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">
-          Fast, Efficient and Productive
+          Rápida, eficiente y productiva
         </h1>
         
         <div className="d-none d-lg-block text-white fs-base text-center">
-          In this kind of post, the blogger introduces a person they've interviewed
-          and provides some background information.
+          En este tipo de publicación, el bloguero presenta a una persona que ha entrevistado 
+          y proporciona información de fondo.
         </div>
       </div>
     </div>

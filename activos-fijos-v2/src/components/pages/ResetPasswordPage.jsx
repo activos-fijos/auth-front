@@ -7,7 +7,7 @@ import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
 
 const ResetPasswordPage = () => {
-  usePageTitle('Login')
+  usePageTitle('Restablecer Contraseña')
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">

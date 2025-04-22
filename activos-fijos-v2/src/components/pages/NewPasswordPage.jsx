@@ -7,7 +7,7 @@ import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
 
 const NewPasswordPage = () => {
-    usePageTitle('New Password')
+    usePageTitle('Nueva contraseña')
     return(
       <AuthLayout>
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">

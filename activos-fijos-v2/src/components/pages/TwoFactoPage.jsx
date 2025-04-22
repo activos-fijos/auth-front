@@ -7,7 +7,7 @@ import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
 
 const TwoFactorPage = () => {
-  usePageTitle('Login')
+  usePageTitle('Verificación de dos pasos')
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">
