@@ -7,6 +7,7 @@ const PasswordInput = ({
   showMeter = false,
   placeholder = "Password",
   className = "",
+  error = '',
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   // Validaciones de contraseña
@@ -14,6 +15,7 @@ const PasswordInput = ({
   const hasUpperCase = /[A-Z]/.test(value);
   const hasNumber = /[0-9]/.test(value);
   const hasSpecialChar = /[^A-Za-z0-9]/.test(value);
+  const hasTyped = value.length > 0;
 
   const tooglePasswordVisivility = () => {
     setShowPassword(!showPassword);
@@ -26,7 +28,7 @@ const PasswordInput = ({
           type={showPassword ? "text" : "password"}
           name={name}
           placeholder={placeholder}
-          className="form-control bg-transparent"
+          className={`form-control bg-transparent  ${error ? 'is-invalid' : ''}`}
           value={value}
           onChange={onChange}
         />
@@ -40,6 +42,7 @@ const PasswordInput = ({
             } fs-2`}
           ></i>
         </span>
+        {error && <div className="invalid-feedback d-block">{error}</div>}
       </div>
 
       {showMeter && (
@@ -57,12 +60,14 @@ const PasswordInput = ({
               >
                 <div
                   className={`w-100 rounded h-5px mb-1 ${
-                    item.condition ? "bg-success" : "bg-secondary"
+                    !hasTyped ? "bg-secondary":
+                    item.condition ? "bg-success" : "bg-danger"
                   }`}
                 ></div>
                 <small
                   className={`text-center ${
-                    item.condition ? "text-success" : "text-muted"
+                    !hasTyped ? "text-muted":
+                    item.condition ? "text-success" : "text-danger"
                   }`}
                 >
                   {item.label}

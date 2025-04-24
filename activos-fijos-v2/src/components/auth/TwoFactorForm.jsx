@@ -19,6 +19,8 @@ const TwoFactorForm = () => {
     useRef(null),
   ];
 
+  const [error, setError]= useState(false);
+
   const handleChance = (e, index) => {
     const { name, value } = e.target;
     if (/^\d$/.test(value)) {
@@ -26,15 +28,25 @@ const TwoFactorForm = () => {
       if (index < inputsRef.length - 1) {
         inputsRef[index + 1].current.focus();
       }
+      setError(false)
     } else if (value === "") {
       setFormData((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
+  const handleSubmit = () =>{
+    const allFilled = Object.values(formData).every((v) => v !== "");
+    if(!allFilled){
+      setError(true)
+    } else {
+      setError(false);
+    }
+  }
+
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form className="form w-100" id="kt_sign_in_form">
+        <form className="form w-100" id="kt_sign_in_form" onSubmit={handleSubmit}>
           <div class="text-center mb-10">
             <img
               alt="Logo"
@@ -60,18 +72,24 @@ const TwoFactorForm = () => {
                   type="text"
                   name={key}
                   maxLength="1"
-                  className="form-control bg-transparent h-60px w-60px fs-20qx text-center mx-1 my-2"
+                  className={`form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2 ${
+                    error && !formData[key] ? "border-danger" : ""
+                  }`}
                   value={formData[key]}
                   onChange={(e) => handleChance(e, index)}
                   ref={inputsRef[index]}
                 />
               ))}
             </div>
+            {error && (
+              <div className="text-danger mt-2">
+                Por favor complete los campos.
+              </div>
+            )}
           </div>
           <div class="d-flex flex-center">
             <button
-              type="button"
-              id="kt_sing_in_two_factor_submit"
+              type="submit"
               class="btn btn-lg btn-primary fw-bold mb-5"
             >
               <span class="indicator-label">Enviar</span>

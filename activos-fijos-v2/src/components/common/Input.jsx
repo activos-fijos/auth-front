@@ -7,7 +7,7 @@ const Input = ({
   value,
   onChange,
   className = '',
-  ...props
+  error = '',
 }) => {
   return (
     <div className={`${className}`}>
@@ -15,11 +15,11 @@ const Input = ({
         type={type}
         name={name}
         placeholder={placeholder}
-        className="form-control bg-transparent"
+        className={`form-control bg-transparent ${error ? 'is-invalid' : ''}`}
         value={value}
         onChange={onChange}
-        {...props}
       />
+      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };
