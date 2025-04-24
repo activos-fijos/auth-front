@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const TwoFactorForm = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +10,25 @@ const TwoFactorForm = () => {
     code_6: "",
   });
 
-  const handleChance = (e) => {
+  const inputsRef = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  const handleChance = (e, index) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (/^\d$/.test(value)) {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      if (index < inputsRef.length - 1) {
+        inputsRef[index + 1].current.focus();
+      }
+    } else if (value === "") {
+      setFormData((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   return (
@@ -37,61 +53,19 @@ const TwoFactorForm = () => {
             <div class="fw-bold text-start text-dark fs-6 mb-1 ms-1">
               Escriba su código de seguridad de 6 dígitos
             </div>
-            <div class="d-flex flex-wrap flex-stack">
-              <input
-                type="text"
-                name="code_1"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_1}
-                onChange={handleChance}
-              />
-              <input
-                type="text"
-                name="code_2"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_2}
-                onChange={handleChance}
-              />
-              <input
-                type="text"
-                name="code_3"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_3}
-                onChange={handleChance}
-              />
-              <input
-                type="text"
-                name="code_4"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_4}
-                onChange={handleChance}
-              />
-              <input
-                type="text"
-                name="code_5"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_5}
-                onChange={handleChance}
-              />
-              <input
-                type="text"
-                name="code_6"
-                data-inputmask="'mask': '9', 'placeholder': ''"
-                maxlength="1"
-                class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
-                value={formData.code_6}
-                onChange={handleChance}
-              />
+            <div className="d-flex flex-wrap flex-stack">
+              {Object.keys(formData).map((key, index) => (
+                <input
+                  key={key}
+                  type="text"
+                  name={key}
+                  maxLength="1"
+                  className="form-control bg-transparent h-60px w-60px fs-20qx text-center mx-1 my-2"
+                  value={formData[key]}
+                  onChange={(e) => handleChance(e, index)}
+                  ref={inputsRef[index]}
+                />
+              ))}
             </div>
           </div>
           <div class="d-flex flex-center">
@@ -110,13 +84,9 @@ const TwoFactorForm = () => {
         </form>
         <div class="text-center fw-semibold fs-5">
           <span class="text-muted me-1">¿No recibiste el código?</span>
-          <span class="link-primary fs-5 me-1 cursor-pointer">
-            Reenviar
-          </span>
+          <span class="link-primary fs-5 me-1 cursor-pointer">Reenviar</span>
           <span class="text-muted me-1">o</span>
-          <span class="link-primary fs-5 cursor pointer">
-            Llámanos
-          </span>
+          <span class="link-primary fs-5 cursor pointer">Llámanos</span>
         </div>
       </div>
     </div>
