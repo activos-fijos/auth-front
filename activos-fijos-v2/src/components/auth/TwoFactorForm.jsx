@@ -19,7 +19,7 @@ const TwoFactorForm = () => {
     useRef(null),
   ];
 
-  const [error, setError]= useState(false);
+  const [error, setError] = useState(false);
 
   const handleChance = (e, index) => {
     const { name, value } = e.target;
@@ -28,25 +28,29 @@ const TwoFactorForm = () => {
       if (index < inputsRef.length - 1) {
         inputsRef[index + 1].current.focus();
       }
-      setError(false)
+      setError(false);
     } else if (value === "") {
       setFormData((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
-  const handleSubmit = () =>{
+  const handleSubmit = () => {
     const allFilled = Object.values(formData).every((v) => v !== "");
-    if(!allFilled){
-      setError(true)
+    if (!allFilled) {
+      setError(true);
     } else {
       setError(false);
     }
-  }
+  };
 
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form className="form w-100" id="kt_sign_in_form" onSubmit={handleSubmit}>
+        <form
+          className="form w-100"
+          id="kt_sign_in_form"
+          onSubmit={handleSubmit}
+        >
           <div class="text-center mb-10">
             <img
               alt="Logo"
@@ -88,10 +92,7 @@ const TwoFactorForm = () => {
             )}
           </div>
           <div class="d-flex flex-center">
-            <button
-              type="submit"
-              class="btn btn-lg btn-primary fw-bold mb-5"
-            >
+            <button type="submit" class="btn btn-lg btn-primary fw-bold mb-5">
               <span class="indicator-label">Enviar</span>
               <span class="indicator-progress">
                 Please wait...

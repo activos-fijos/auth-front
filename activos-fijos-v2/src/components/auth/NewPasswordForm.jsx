@@ -6,46 +6,57 @@ const NewPasswordForm = () => {
   const [formData, setFormData] = useState({
     password: "",
     newPassword: "",
-    termsAccepted:false
+    termsAccepted: false,
   });
 
   const [errors, setErrors] = useState({
-    password: '',
-    newPassword: '',
-    termsAccepted: ''
-  })
+    password: "",
+    newPassword: "",
+    termsAccepted: "",
+  });
 
   const handleChance = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
-    setErrors(prev => ({ ...prev, [name]: ''}));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.password) newErrors.password ="La contraseña es requerida";
-    if (!formData.newPassword) newErrors.newPassword ="Por favor repite la contraseña";
-    if (!formData.termsAccepted) newErrors.termsAccepted = "Debes aceptar los términos y condiciones";
-    if(formData.password && !isPasswordValid(formData.password)){
-      newErrors.password = "El formato no es correcto"
-    } else if (formData.password !== formData.newPassword){
-      newErrors.newPassword = "Las contraseñas no coinciden"
+    if (!formData.password) newErrors.password = "La contraseña es requerida";
+    if (!formData.newPassword)
+      newErrors.newPassword = "Por favor repite la contraseña";
+    if (!formData.termsAccepted)
+      newErrors.termsAccepted = "Debes aceptar los términos y condiciones";
+    if (formData.password && !isPasswordValid(formData.password)) {
+      newErrors.password = "El formato no es correcto";
+    } else if (formData.password !== formData.newPassword) {
+      newErrors.newPassword = "Las contraseñas no coinciden";
     }
 
     if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
+      setErrors(newErrors);
     } else {
       setErrors({});
     }
-  }
+  };
 
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form className="form w-100" id="kt_new_password_form" onSubmit={handleSubmit}>
+        <form
+          className="form w-100"
+          id="kt_new_password_form"
+          onSubmit={handleSubmit}
+        >
           <div class="text-center mb-10">
-            <h1 class="text-dark fw-bolder mb-3">Establecer nueva contraseña</h1>
+            <h1 class="text-dark fw-bolder mb-3">
+              Establecer nueva contraseña
+            </h1>
             <div class="text-gray-500 fw-semibold fs-6">
               ¿Ya has restablecido la contraseña?
               <a href="/" class="link-primary fw-bold">
@@ -60,7 +71,7 @@ const NewPasswordForm = () => {
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
-            error = {errors.password} 
+            error={errors.password}
           />
 
           <PasswordInput
@@ -74,7 +85,9 @@ const NewPasswordForm = () => {
           <div class="fv-row mb-8">
             <label class="form-check form-check-inline">
               <input
-                class={`form-check-input ${errors.termsAccepted ? 'is-invalid' : ''}`}
+                class={`form-check-input ${
+                  errors.termsAccepted ? "is-invalid" : ""
+                }`}
                 type="checkbox"
                 name="termsAccepted"
                 checked={formData.termsAccepted}
@@ -88,14 +101,13 @@ const NewPasswordForm = () => {
               </span>
             </label>
             {errors.termsAccepted && (
-              <div className="invalid-feedback d-block">{errors.termsAccepted}</div> // ✅ Mostrar error
+              <div className="invalid-feedback d-block">
+                {errors.termsAccepted}
+              </div> // ✅ Mostrar error
             )}
           </div>
           <div class="d-grid mb-10">
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
+            <button type="submit" class="btn btn-primary">
               <span class="indicator-label">Enviar</span>
               <span class="indicator-progress">
                 Please wait...
