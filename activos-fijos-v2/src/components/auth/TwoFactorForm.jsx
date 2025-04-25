@@ -49,7 +49,6 @@ const TwoFactorForm = () => {
         <form
           className="form w-100"
           id="kt_sign_in_form"
-          onSubmit={handleSubmit}
         >
           <div class="text-center mb-10">
             <img
@@ -92,7 +91,7 @@ const TwoFactorForm = () => {
             )}
           </div>
           <div class="d-flex flex-center">
-            <button type="submit" class="btn btn-lg btn-primary fw-bold mb-5">
+            <button type="button" class="btn btn-lg btn-primary fw-bold mb-5" onClick={handleSubmit}>
               <span class="indicator-label">Enviar</span>
               <span class="indicator-progress">
                 Please wait...
