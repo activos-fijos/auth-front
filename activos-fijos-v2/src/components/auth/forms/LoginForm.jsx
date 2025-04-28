@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Input from "../common/Input";
-import PasswordInput from "../common/PasswordInput";
+import Input from "../../common/Input";
+import PasswordInput from "../../common/PasswordInput";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({

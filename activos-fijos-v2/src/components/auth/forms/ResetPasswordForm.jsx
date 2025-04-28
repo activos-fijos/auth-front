@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "../common/Input";
+import Input from "../../common/Input";
 
 const ResetPasswordForm = () => {
   const [formData, setFormData] = useState({

@@ -3,7 +3,7 @@ import AuthLayout from '../layout/AuthLayout';
 import AuthAside from '../auth/AuthAside';
 import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
-import SignUpForm from '../auth/SignUpForm';
+import SignUpForm from '../auth/forms/SignUpForm';
 import usePageTitle from '../../hooks/usePageTitle';
 
 const SignUpPage = () => {

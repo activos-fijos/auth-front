@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import PasswordInput from "../common/PasswordInput";
-import isPasswordValid from "../../hooks/passwordValidation";
+import Input from "../../common/Input";
+import PasswordInput from "../../common/PasswordInput";
+import isPasswordValid from "../../../hooks/passwordValidation";
 
-const NewPasswordForm = () => {
+const SignUpForm = () => {
   const [formData, setFormData] = useState({
+    email: "",
     password: "",
-    newPassword: "",
+    confirmPassword: "",
     termsAccepted: false,
   });
 
   const [errors, setErrors] = useState({
+    email: "",
     password: "",
-    newPassword: "",
+    confirmPassword: "",
     termsAccepted: "",
   });
 
@@ -27,15 +30,17 @@ const NewPasswordForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
+    if (!formData.email) newErrors.email = "El correo es requerido";
     if (!formData.password) newErrors.password = "La contraseña es requerida";
-    if (!formData.newPassword)
-      newErrors.newPassword = "Por favor repite la contraseña";
+    if (!formData.confirmPassword)
+      newErrors.confirmPassword = "Por favor verifica la contraseña";
     if (!formData.termsAccepted)
       newErrors.termsAccepted = "Debes aceptar los términos y condiciones";
+
     if (formData.password && !isPasswordValid(formData.password)) {
       newErrors.password = "El formato no es correcto";
-    } else if (formData.password !== formData.newPassword) {
-      newErrors.newPassword = "Las contraseñas no coinciden";
+    } else if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Las contraseñas no coinciden";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -50,20 +55,26 @@ const NewPasswordForm = () => {
       <div className="w-lg-500px p-10">
         <form
           className="form w-100"
-          id="kt_new_password_form"
+          id="kt_sign_up_form"
           onSubmit={handleSubmit}
         >
-          <div class="text-center mb-10">
-            <h1 class="text-dark fw-bolder mb-3">
-              Establecer nueva contraseña
-            </h1>
-            <div class="text-gray-500 fw-semibold fs-6">
-              ¿Ya has restablecido la contraseña?
-              <a href="/" class="link-primary fw-bold">
-                Iniciar sesión
-              </a>
+          <div className="text-center mb-11">
+            <h1 className="text-dark fw-bolder mb-3">Regístrate</h1>
+            <div className="text-gray-500 fw-semibold fs-6">
+              Tus campañas sociales
             </div>
           </div>
+
+          <Input
+            className="fv-row mb-8"
+            type="email"
+            name="email"
+            placeholder="Correo"
+            value={formData.email}
+            onChange={handleChance}
+            error={errors.email}
+          />
+
           <PasswordInput
             className="fv-row mb-8"
             name="password"
@@ -76,16 +87,18 @@ const NewPasswordForm = () => {
 
           <PasswordInput
             className="fv-row mb-8"
-            name="newPassword"
+            name="confirmPassword"
             placeholder="Repetir contraseña"
-            value={formData.newPassword}
+            value={formData.confirmPassword}
             onChange={handleChance}
-            error={errors.newPassword}
+            error={errors.confirmPassword}
           />
-          <div class="fv-row mb-8">
-            <label class="form-check form-check-inline">
+
+          {/* Términos */}
+          <div className="fv-row mb-8">
+            <label className="form-check form-check-inline">
               <input
-                class={`form-check-input ${
+                className={`form-check-input ${
                   errors.termsAccepted ? "is-invalid" : ""
                 }`}
                 type="checkbox"
@@ -106,14 +119,20 @@ const NewPasswordForm = () => {
               </div> // ✅ Mostrar error
             )}
           </div>
-          <div class="d-grid mb-10">
-            <button type="submit" class="btn btn-primary">
-              <span class="indicator-label">Enviar</span>
-              <span class="indicator-progress">
-                Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-              </span>
+
+          {/* Botón */}
+          <div className="d-grid mb-10">
+            <button type="submit" className="btn btn-primary">
+              <span className="indicator-label">Regístrate</span>
             </button>
+          </div>
+
+          {/* Enlace a Login */}
+          <div className="text-gray-500 text-center fw-semibold fs-6">
+            ¿Ya tienes una cuenta?{" "}
+            <a href="/" className="link-primary">
+              Iniciar sesión
+            </a>
           </div>
         </form>
       </div>
@@ -121,4 +140,4 @@ const NewPasswordForm = () => {
   );
 };
 
-export default NewPasswordForm;
+export default SignUpForm;

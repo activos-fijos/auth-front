@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthLayout from '../layout/AuthLayout';
-import TwofactorForm from '../auth/TwoFactorForm';
+import TwofactorForm from '../auth/forms/TwoFactorForm';
 import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import AuthAside from '../auth/AuthAside';

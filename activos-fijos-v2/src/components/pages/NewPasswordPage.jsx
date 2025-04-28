@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthLayout from '../layout/AuthLayout';
-import NewPasswordForm from '../auth/NewPasswordForm';
+import NewPasswordForm from '../auth/forms/NewPasswordForm';
 import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import AuthAside from '../auth/AuthAside';
