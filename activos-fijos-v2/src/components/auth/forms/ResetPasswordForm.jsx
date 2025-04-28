@@ -36,11 +36,11 @@ const ResetPasswordForm = () => {
           id="kt_sign_in_form"
           onSubmit={handleSubmit}
         >
-          <div class="text-center mb-10">
-            <h1 class="text-dark fw-bolder mb-3">
+          <div className="text-center mb-10">
+            <h1 className="text-dark fw-bolder mb-3">
               ¿Has olvidado tu contraseña?
             </h1>
-            <div class="text-gray-500 fw-semibold fs-6">
+            <div className="text-gray-500 fw-semibold fs-6">
               Ingresa tu correo electrónico para restablecer tu contraseña.
             </div>
           </div>
@@ -53,15 +53,15 @@ const ResetPasswordForm = () => {
             onChange={handleChance}
             error={errors.email}
           />
-          <div class="d-flex flex-wrap justify-content-center pb-lg-0">
-            <button type="submit" class="btn btn-primary me-4">
-              <span class="indicator-label">Enviar</span>
-              <span class="indicator-progress">
+          <div className="d-flex flex-wrap justify-content-center pb-lg-0">
+            <button type="submit" className="btn btn-primary me-4">
+              <span className="indicator-label">Enviar</span>
+              <span className="indicator-progress">
                 Espere por favor...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
               </span>
             </button>
-            <a href="/" class="btn btn-light">
+            <a href="/" className="btn btn-light">
               Cancelar
             </a>
           </div>

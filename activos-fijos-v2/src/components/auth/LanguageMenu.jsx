@@ -34,7 +34,7 @@ const LanguageMenu = () => {
           alt="flag"
         />
         <span className="me-1">{currentLanguage.name}</span>
-        <i class="ki-duotone ki-down fs-5 text-muted rotate-180 m-0"></i>
+        <i className="ki-duotone ki-down fs-5 text-muted rotate-180 m-0"></i>
       </button>
 
       <div

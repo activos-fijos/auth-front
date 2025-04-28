@@ -50,22 +50,22 @@ const TwoFactorForm = () => {
           className="form w-100"
           id="kt_sign_in_form"
         >
-          <div class="text-center mb-10">
+          <div className="text-center mb-10">
             <img
               alt="Logo"
-              class="mh-125px"
+              className="mh-125px"
               src="assets/media/svg/misc/smartphone-2.svg"
             />
           </div>
-          <div class="text-center mb-10">
-            <h1 class="text-dark mb-3">Verificación de dos pasos</h1>
-            <div class="text-muted fw-semibold fs-5 mb-5">
+          <div className="text-center mb-10">
+            <h1 className="text-dark mb-3">Verificación de dos pasos</h1>
+            <div className="text-muted fw-semibold fs-5 mb-5">
               Ingrese el código de verificación que le enviamos a
             </div>
-            <div class="fw-bold text-dark fs-3">******7859</div>
+            <div className="fw-bold text-dark fs-3">******7859</div>
           </div>
-          <div class="mb-10">
-            <div class="fw-bold text-start text-dark fs-6 mb-1 ms-1">
+          <div className="mb-10">
+            <div className="fw-bold text-start text-dark fs-6 mb-1 ms-1">
               Escriba su código de seguridad de 6 dígitos
             </div>
             <div className="d-flex flex-wrap flex-stack">
@@ -90,21 +90,21 @@ const TwoFactorForm = () => {
               </div>
             )}
           </div>
-          <div class="d-flex flex-center">
-            <button type="button" class="btn btn-lg btn-primary fw-bold mb-5" onClick={handleSubmit}>
-              <span class="indicator-label">Enviar</span>
-              <span class="indicator-progress">
+          <div className="d-flex flex-center">
+            <button type="button" className="btn btn-lg btn-primary fw-bold mb-5" onClick={handleSubmit}>
+              <span className="indicator-label">Enviar</span>
+              <span className="indicator-progress">
                 Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
               </span>
             </button>
           </div>
         </form>
-        <div class="text-center fw-semibold fs-5">
-          <span class="text-muted me-1">¿No recibiste el código?</span>
-          <span class="link-primary fs-5 me-1 cursor-pointer">Reenviar</span>
-          <span class="text-muted me-1">o</span>
-          <span class="link-primary fs-5 cursor pointer">Llámanos</span>
+        <div className="text-center fw-semibold fs-5">
+          <span className="text-muted me-1">¿No recibiste el código?</span>
+          <span className="link-primary fs-5 me-1 cursor-pointer">Reenviar</span>
+          <span className="text-muted me-1">o</span>
+          <span className="link-primary fs-5 cursor pointer">Llámanos</span>
         </div>
       </div>
     </div>

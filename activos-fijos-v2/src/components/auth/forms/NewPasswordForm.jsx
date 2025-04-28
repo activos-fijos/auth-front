@@ -53,13 +53,13 @@ const NewPasswordForm = () => {
           id="kt_new_password_form"
           onSubmit={handleSubmit}
         >
-          <div class="text-center mb-10">
-            <h1 class="text-dark fw-bolder mb-3">
+          <div className="text-center mb-10">
+            <h1 className="text-dark fw-bolder mb-3">
               Establecer nueva contraseña
             </h1>
-            <div class="text-gray-500 fw-semibold fs-6">
+            <div className="text-gray-500 fw-semibold fs-6">
               ¿Ya has restablecido la contraseña?
-              <a href="/" class="link-primary fw-bold">
+              <a href="/" className="link-primary fw-bold">
                 Iniciar sesión
               </a>
             </div>
@@ -82,10 +82,10 @@ const NewPasswordForm = () => {
             onChange={handleChance}
             error={errors.newPassword}
           />
-          <div class="fv-row mb-8">
-            <label class="form-check form-check-inline">
+          <div className="fv-row mb-8">
+            <label className="form-check form-check-inline">
               <input
-                class={`form-check-input ${
+                className={`form-check-input ${
                   errors.termsAccepted ? "is-invalid" : ""
                 }`}
                 type="checkbox"
@@ -106,12 +106,12 @@ const NewPasswordForm = () => {
               </div> // ✅ Mostrar error
             )}
           </div>
-          <div class="d-grid mb-10">
-            <button type="submit" class="btn btn-primary">
-              <span class="indicator-label">Enviar</span>
-              <span class="indicator-progress">
+          <div className="d-grid mb-10">
+            <button type="submit" className="btn btn-primary">
+              <span className="indicator-label">Enviar</span>
+              <span className="indicator-progress">
                 Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
               </span>
             </button>
           </div>
