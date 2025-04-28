@@ -38,7 +38,6 @@ const LoginForm = () => {
         <form
           className="form w-100"
           id="kt_sign_in_form"
-          onSubmit={handleSubmit}
         >
           <div className="text-center mb-11">
             <h1 className="text-dark fw-bolder mb-3">Iniciar sesión</h1>
@@ -73,7 +72,7 @@ const LoginForm = () => {
           </div>
 
           <div className="d-grid mb-10">
-            <button type="submit" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
               <span className="indicator-label">Iniciar sesión</span>
             </button>
           </div>

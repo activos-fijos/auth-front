@@ -51,7 +51,6 @@ const NewPasswordForm = () => {
         <form
           className="form w-100"
           id="kt_new_password_form"
-          onSubmit={handleSubmit}
         >
           <div className="text-center mb-10">
             <h1 className="text-dark fw-bolder mb-3">
@@ -107,7 +106,7 @@ const NewPasswordForm = () => {
             )}
           </div>
           <div className="d-grid mb-10">
-            <button type="submit" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
               <span className="indicator-label">Enviar</span>
               <span className="indicator-progress">
                 Please wait...

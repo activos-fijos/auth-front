@@ -34,7 +34,6 @@ const ResetPasswordForm = () => {
         <form
           className="form w-100"
           id="kt_sign_in_form"
-          onSubmit={handleSubmit}
         >
           <div className="text-center mb-10">
             <h1 className="text-dark fw-bolder mb-3">
@@ -54,7 +53,7 @@ const ResetPasswordForm = () => {
             error={errors.email}
           />
           <div className="d-flex flex-wrap justify-content-center pb-lg-0">
-            <button type="submit" className="btn btn-primary me-4">
+            <button type="button" className="btn btn-primary me-4" onClick={handleSubmit}>
               <span className="indicator-label">Enviar</span>
               <span className="indicator-progress">
                 Espere por favor...

@@ -56,7 +56,6 @@ const SignUpForm = () => {
         <form
           className="form w-100"
           id="kt_sign_up_form"
-          onSubmit={handleSubmit}
         >
           <div className="text-center mb-11">
             <h1 className="text-dark fw-bolder mb-3">Regístrate</h1>
@@ -122,7 +121,7 @@ const SignUpForm = () => {
 
           {/* Botón */}
           <div className="d-grid mb-10">
-            <button type="submit" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
               <span className="indicator-label">Regístrate</span>
             </button>
           </div>
