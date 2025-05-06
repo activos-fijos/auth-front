@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../../common/Input";
 import PasswordInput from "../../common/PasswordInput";
 import isPasswordValid from "../../../hooks/passwordValidation";
+import Button from "../../common/Button";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -92,8 +93,6 @@ const SignUpForm = () => {
             onChange={handleChance}
             error={errors.confirmPassword}
           />
-
-          {/* Términos */}
           <div className="fv-row mb-8">
             <label className="form-check form-check-inline">
               <input
@@ -115,18 +114,10 @@ const SignUpForm = () => {
             {errors.termsAccepted && (
               <div className="invalid-feedback d-block">
                 {errors.termsAccepted}
-              </div> // ✅ Mostrar error
+              </div>
             )}
           </div>
-
-          {/* Botón */}
-          <div className="d-grid mb-10">
-            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
-              <span className="indicator-label">Regístrate</span>
-            </button>
-          </div>
-
-          {/* Enlace a Login */}
+          <Button label="Regístrate" onClick={handleSubmit} />
           <div className="text-gray-500 text-center fw-semibold fs-6">
             ¿Ya tienes una cuenta?{" "}
             <a href="/" className="link-primary">

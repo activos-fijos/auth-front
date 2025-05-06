@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../common/Input";
+import Button from "../../common/Button";
 
 const ResetPasswordForm = () => {
   const [formData, setFormData] = useState({
@@ -53,13 +54,7 @@ const ResetPasswordForm = () => {
             error={errors.email}
           />
           <div className="d-flex flex-wrap justify-content-center pb-lg-0">
-            <button type="button" className="btn btn-primary me-4" onClick={handleSubmit}>
-              <span className="indicator-label">Enviar</span>
-              <span className="indicator-progress">
-                Espere por favor...
-                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-              </span>
-            </button>
+            <Button label="Enviar" onClick={handleSubmit} />
             <a href="/" className="btn btn-light">
               Cancelar
             </a>

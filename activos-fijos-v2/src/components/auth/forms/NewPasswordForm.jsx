@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PasswordInput from "../../common/PasswordInput";
 import isPasswordValid from "../../../hooks/passwordValidation";
+import Button from "../../common/Button";
 
 const NewPasswordForm = () => {
   const [formData, setFormData] = useState({
@@ -105,15 +106,7 @@ const NewPasswordForm = () => {
               </div> // ✅ Mostrar error
             )}
           </div>
-          <div className="d-grid mb-10">
-            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
-              <span className="indicator-label">Enviar</span>
-              <span className="indicator-progress">
-                Please wait...
-                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-              </span>
-            </button>
-          </div>
+          <Button label="Enviar" onClick={handleSubmit} />
         </form>
       </div>
     </div>

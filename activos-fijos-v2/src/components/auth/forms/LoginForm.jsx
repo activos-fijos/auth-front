@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../common/Input";
 import PasswordInput from "../../common/PasswordInput";
+import Button from "../../common/Button";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -35,10 +36,7 @@ const LoginForm = () => {
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form
-          className="form w-100"
-          id="kt_sign_in_form"
-        >
+        <form className="form w-100" id="kt_sign_in_form">
           <div className="text-center mb-11">
             <h1 className="text-dark fw-bolder mb-3">Iniciar sesión</h1>
             <div className="text-gray-500 fw-semibold fs-6">
@@ -70,13 +68,7 @@ const LoginForm = () => {
               ¿Has olvidado tu contraseña?
             </a>
           </div>
-
-          <div className="d-grid mb-10">
-            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
-              <span className="indicator-label">Iniciar sesión</span>
-            </button>
-          </div>
-
+          <Button label="Iniciar sesión" onClick={handleSubmit} />
           <div className="text-gray-500 text-center fw-semibold fs-6">
             ¿Aún no eres miembro?{" "}
             <a href="/singup" className="link-primary">

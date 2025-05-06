@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import VerificationCodeInputs from "../../common/VerificationCodeInputs";
+import Button from "../../common/Button";
 
 const TwoFactorForm = () => {
   const [formData, setFormData] = useState({
@@ -64,15 +65,7 @@ const TwoFactorForm = () => {
             handleChance={handleChance}
             inputsRef={inputsRef}
           />
-          <div className="d-flex flex-center">
-            <button type="button" className="btn btn-lg btn-primary fw-bold mb-5" onClick={handleSubmit}>
-              <span className="indicator-label">Enviar</span>
-              <span className="indicator-progress">
-                Please wait...
-                <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-              </span>
-            </button>
-          </div>
+          <Button label="Enviar" onClick={handleSubmit} />
         </form>
         <div className="text-center fw-semibold fs-5">
           <span className="text-muted me-1">¿No recibiste el código?</span>
