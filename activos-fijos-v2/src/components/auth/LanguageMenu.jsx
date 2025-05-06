@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
+import i18n from "i18next";
+
 
 const LanguageMenu = () => {
   const [currentLanguage, setCurrentLanguage] = useState({
-    name: "Inglés",
-    flag: "united-states.svg",
+    name: "Español",
+    flag: "spain.svg",
   });
 
   const languages = [
-    { name: "Inglés", flag: "united-states.svg" },
-    { name: "Español", flag: "spain.svg" },
-    { name: "Alemán", flag: "germany.svg" },
-    { name: "Japonés", flag: "japan.svg" },
-    { name: "Francés", flag: "france.svg" },
+    { name: "Inglés", flag: "united-states.svg", code:"en" },
+    { name: "Español", flag: "spain.svg", code:"es" },
+    { name: "Alemán", flag: "germany.svg", code:"de" },
+    { name: "Japonés", flag: "japan.svg", code:"ja" },
+    { name: "Francés", flag: "france.svg", code:"fr" },
   ];
+
+  useEffect(() => {
+    const currentLangCode = i18n.language || "es";
+    const currentLang = languages.find((lang) => lang.code === currentLangCode);
+    setCurrentLanguage(currentLang);
+  }, [i18n.language]);
+  
 
   useEffect(() => {
     if (window.KTMenu) {
@@ -49,6 +58,7 @@ const LanguageMenu = () => {
               onClick={(e) => {
                 e.preventDefault();
                 setCurrentLanguage(lang);
+                i18n.changeLanguage(lang.code)
               }}
             >
               <span className="symbol symbol-20px me-4">

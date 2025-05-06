@@ -5,9 +5,11 @@ import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
+import { useTranslation } from "react-i18next";
 
 const TwoFactorPage = () => {
-  usePageTitle('Verificación de dos pasos')
+  const { t } = useTranslation();
+  usePageTitle(t("pageTitles.twoFactorPage"))
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">

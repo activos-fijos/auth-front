@@ -1,0 +1,94 @@
+{
+  "login": {
+    "title": "ログイン",
+    "subtitle": "あなたのソーシャルキャンペーン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "forgotPassword": "パスワードを忘れましたか？",
+    "submit": "ログイン",
+    "registerPrompt": "まだ会員ではありませんか？",
+    "registerLink": "サインアップ",
+    "errors": {
+      "emailRequired": "メールアドレスは必須です",
+      "passwordRequired": "パスワードは必須です"
+    }
+  },
+  "newPassword": {
+    "title": "新しいパスワードを設定",
+    "subtitle": "パスワードをリセットしましたか？",
+    "loginLink": "ログイン",
+    "password": "パスワード",
+    "repeatPassword": "パスワードを再入力",
+    "termsText": "私は",
+    "termsLink": "利用規約に同意します",
+    "": "送信",
+    "errors": {
+      "passwordRequired": "パスワードは必須です",
+      "newPasswordRequired": "パスワードを再入力してください",
+      "termsRequired": "利用規約に同意する必要があります",
+      "invalidFormat": "フォーマットが正しくありません",
+      "passwordMismatch": "パスワードが一致しません"
+    }
+  },
+  "resetPassword": {
+    "title": "パスワードを忘れましたか？",
+    "subtitle": "パスワードをリセットするためにメールアドレスを入力してください。",
+    "email": "メールアドレス",
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "errors": {
+      "emailRequired": "メールアドレスは必須です"
+    }
+  },
+  "signUp": {
+    "title": "サインアップ",
+    "subtitle": "あなたのソーシャルキャンペーン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "repeatPassword": "パスワードを再入力",
+    "termsText": "私は",
+    "termsLink": "利用規約に同意します",
+    "submit": "サインアップ",
+    "loginPrompt": "すでにアカウントをお持ちですか？",
+    "loginLink": "ログイン",
+    "errors": {
+      "emailRequired": "メールアドレスは必須です",
+      "passwordRequired": "パスワードは必須です",
+      "confirmPasswordRequired": "パスワードを確認してください",
+      "termsRequired": "利用規約に同意する必要があります",
+      "invalidFormat": "フォーマットが正しくありません",
+      "passwordMismatch": "パスワードが一致しません"
+    }
+  },
+  "twoFactor": {
+    "submit": "送信",
+    "noCode": "コードを受け取っていませんか？",
+    "resend": "再送信",
+    "or": "または",
+    "callUs": "お電話ください"
+  },
+  "authAside": {
+    "title": "迅速で効率的、そして生産的",
+    "description": "このタイプの投稿では、ブロガーがインタビューした人物を紹介し、背景情報を提供します。"
+  },
+  "footer": {
+    "terms": "利用規約",
+    "plans": "プラン",
+    "contact": "お問い合わせ"
+  },
+  "verificationCodeInputs": {
+    "title": "2段階認証",
+    "instruction": "送信された認証コードを入力してください",
+    "masked": "******7859",
+    "inputInstruction1": "セキュリティコードを入力してください（",
+    "inputInstruction2": "桁）",
+    "error": "フィールドを埋めてください。"
+  },
+  "pageTitles": {
+    "loginPage": "ログイン",
+    "newPasswordPage": "新しいパスワード",
+    "resetPasswordPage": "パスワードをリセット",
+    "signUpPage": "サインアップ",
+    "twoFactorPage": "2段階認証"
+  }
+}

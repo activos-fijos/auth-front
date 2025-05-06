@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import VerificationCodeInputs from "../../common/VerificationCodeInputs";
 import Button from "../../common/Button";
+import { useTranslation } from "react-i18next";
 
 const TwoFactorForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     code_1: "",
     code_2: "",
@@ -48,10 +50,7 @@ const TwoFactorForm = () => {
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form
-          className="form w-100"
-          id="kt_sign_in_form"
-        >
+        <form className="form w-100" id="kt_sign_in_form">
           <div className="text-center mb-10">
             <img
               alt="Logo"
@@ -60,18 +59,24 @@ const TwoFactorForm = () => {
             />
           </div>
           <VerificationCodeInputs
+            title={t("verificationCodeInputs.title")}
+            maskedData={t("verificationCodeInputs.masked")}
             formData={formData}
             error={error}
             handleChance={handleChance}
             inputsRef={inputsRef}
           />
-          <Button label="Enviar" onClick={handleSubmit} />
+          <Button label={t("twoFactor.submit")} onClick={handleSubmit} />
         </form>
         <div className="text-center fw-semibold fs-5">
-          <span className="text-muted me-1">¿No recibiste el código?</span>
-          <span className="link-primary fs-5 me-1 cursor-pointer">Reenviar</span>
-          <span className="text-muted me-1">o</span>
-          <span className="link-primary fs-5 cursor pointer">Llámanos</span>
+          <span className="text-muted me-1">{t("twoFactor.noCode")}</span>
+          <span className="link-primary fs-5 me-1 cursor-pointer">
+            {t("twoFactor.resend")}
+          </span>
+          <span className="text-muted me-1">{t("twoFactor.or")}</span>
+          <span className="link-primary fs-5 cursor pointer">
+            {t("twoFactor.callUs")}
+          </span>
         </div>
       </div>
     </div>

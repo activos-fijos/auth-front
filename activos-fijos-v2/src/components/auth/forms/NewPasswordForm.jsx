@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import PasswordInput from "../../common/PasswordInput";
 import isPasswordValid from "../../../hooks/passwordValidation";
 import Button from "../../common/Button";
+import { useTranslation } from "react-i18next";
 
 const NewPasswordForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     password: "",
     newPassword: "",
@@ -28,15 +30,16 @@ const NewPasswordForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.password) newErrors.password = "La contraseña es requerida";
+    if (!formData.password)
+      newErrors.password = t("newPassword.errors.passwordRequired");
     if (!formData.newPassword)
-      newErrors.newPassword = "Por favor repite la contraseña";
+      newErrors.newPassword = t("newPassword.errors.newPasswordRequired");
     if (!formData.termsAccepted)
-      newErrors.termsAccepted = "Debes aceptar los términos y condiciones";
+      newErrors.termsAccepted = t("newPassword.errors.termsRequired");
     if (formData.password && !isPasswordValid(formData.password)) {
-      newErrors.password = "El formato no es correcto";
+      newErrors.password = t("newPassword.errors.invalidFormat");
     } else if (formData.password !== formData.newPassword) {
-      newErrors.newPassword = "Las contraseñas no coinciden";
+      newErrors.newPassword = t("newPassword.errors.passwordMismatch");
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -49,25 +52,22 @@ const NewPasswordForm = () => {
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form
-          className="form w-100"
-          id="kt_new_password_form"
-        >
+        <form className="form w-100" id="kt_new_password_form">
           <div className="text-center mb-10">
             <h1 className="text-dark fw-bolder mb-3">
-              Establecer nueva contraseña
+              {t("newPassword.title")}
             </h1>
             <div className="text-gray-500 fw-semibold fs-6">
-              ¿Ya has restablecido la contraseña?
+              {t("newPassword.subtitle")}
               <a href="/" className="link-primary fw-bold">
-                Iniciar sesión
+                {t("newPassword.loginLink")}
               </a>
             </div>
           </div>
           <PasswordInput
             className="fv-row mb-8"
             name="password"
-            placeholder="Contraseña"
+            placeholder={t("newPassword.password")}
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
@@ -77,7 +77,7 @@ const NewPasswordForm = () => {
           <PasswordInput
             className="fv-row mb-8"
             name="newPassword"
-            placeholder="Repetir contraseña"
+            placeholder={t("newPassword.repeatPassword")}
             value={formData.newPassword}
             onChange={handleChance}
             error={errors.newPassword}
@@ -94,9 +94,9 @@ const NewPasswordForm = () => {
                 onChange={handleChance}
               />
               <span className="form-check-label fw-semibold text-gray-700 fs-base ms-1">
-                Yo acepto los
+                {t("newPassword.termsText")}
                 <span className="ms-1 link-primary cursor-pointer">
-                  Términos y condiciones
+                {t("newPassword.termsLink")}
                 </span>
               </span>
             </label>
@@ -106,7 +106,7 @@ const NewPasswordForm = () => {
               </div> // ✅ Mostrar error
             )}
           </div>
-          <Button label="Enviar" onClick={handleSubmit} />
+          <Button label={t("newPassword.submit")} onClick={handleSubmit} />
         </form>
       </div>
     </div>

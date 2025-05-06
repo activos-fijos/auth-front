@@ -1,0 +1,94 @@
+{
+  "login": {
+    "title": "Se connecter",
+    "subtitle": "Vos campagnes sociales",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "submit": "Se connecter",
+    "registerPrompt": "Pas encore membre ?",
+    "registerLink": "Inscrivez-vous",
+    "errors": {
+      "emailRequired": "L'e-mail est requis",
+      "passwordRequired": "Le mot de passe est requis"
+    }
+  },
+  "newPassword": {
+    "title": "Définir un nouveau mot de passe",
+    "subtitle": "Avez-vous réinitialisé votre mot de passe ?",
+    "loginLink": "Se connecter",
+    "password": "Mot de passe",
+    "repeatPassword": "Répéter le mot de passe",
+    "termsText": "J'accepte les",
+    "termsLink": "Conditions générales",
+    "": "Envoyer",
+    "errors": {
+      "passwordRequired": "Le mot de passe est requis",
+      "newPasswordRequired": "Veuillez répéter le mot de passe",
+      "termsRequired": "Vous devez accepter les conditions générales",
+      "invalidFormat": "Le format est incorrect",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "resetPassword": {
+    "title": "Mot de passe oublié ?",
+    "subtitle": "Entrez votre e-mail pour réinitialiser votre mot de passe.",
+    "email": "E-mail",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "errors": {
+      "emailRequired": "L'e-mail est requis"
+    }
+  },
+  "signUp": {
+    "title": "S'inscrire",
+    "subtitle": "Vos campagnes sociales",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "repeatPassword": "Répéter le mot de passe",
+    "termsText": "J'accepte les",
+    "termsLink": "Conditions générales",
+    "submit": "S'inscrire",
+    "loginPrompt": "Vous avez déjà un compte ?",
+    "loginLink": "Se connecter",
+    "errors": {
+      "emailRequired": "L'e-mail est requis",
+      "passwordRequired": "Le mot de passe est requis",
+      "confirmPasswordRequired": "Veuillez vérifier le mot de passe",
+      "termsRequired": "Vous devez accepter les conditions générales",
+      "invalidFormat": "Le format est incorrect",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "twoFactor": {
+    "submit": "Envoyer",
+    "noCode": "Vous n'avez pas reçu le code ?",
+    "resend": "Renvoyer",
+    "or": "ou",
+    "callUs": "Appelez-nous"
+  },
+  "authAside": {
+    "title": "Rapide, efficace et productif",
+    "description": "Dans ce type de publication, le blogueur présente une personne qu'il a interviewée et fournit des informations de fond."
+  },
+  "footer": {
+    "terms": "Conditions",
+    "plans": "Plans",
+    "contact": "Contactez-nous"
+  },
+  "verificationCodeInputs": {
+    "title": "Vérification à deux étapes",
+    "instruction": "Entrez le code de vérification que nous vous avons envoyé à",
+    "masked": "******7859",
+    "inputInstruction1": "Entrez votre code de sécurité de ",
+    "inputInstruction2": " chiffres",
+    "error": "Veuillez remplir les champs."
+  },
+  "pageTitles": {
+    "loginPage": "Se connecter",
+    "newPasswordPage": "Nouveau mot de passe",
+    "resetPasswordPage": "Réinitialiser le mot de passe",
+    "signUpPage": "S'inscrire",
+    "twoFactorPage": "Vérification à deux étapes"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "login": {
+    "title": "Anmelden",
+    "subtitle": "Ihre Social-Kampagnen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "submit": "Anmelden",
+    "registerPrompt": "Noch kein Mitglied?",
+    "registerLink": "Registrieren",
+    "errors": {
+      "emailRequired": "E-Mail ist erforderlich",
+      "passwordRequired": "Passwort ist erforderlich"
+    }
+  },
+  "newPassword": {
+    "title": "Neues Passwort festlegen",
+    "subtitle": "Haben Sie Ihr Passwort zurückgesetzt?",
+    "loginLink": "Anmelden",
+    "password": "Passwort",
+    "repeatPassword": "Passwort wiederholen",
+    "termsText": "Ich akzeptiere die",
+    "termsLink": "Allgemeinen Geschäftsbedingungen",
+    "": "Absenden",
+    "errors": {
+      "passwordRequired": "Passwort ist erforderlich",
+      "newPasswordRequired": "Bitte wiederholen Sie das Passwort",
+      "termsRequired": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren",
+      "invalidFormat": "Das Format ist nicht korrekt",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein"
+    }
+  },
+  "resetPassword": {
+    "title": "Passwort vergessen?",
+    "subtitle": "Geben Sie Ihre E-Mail-Adresse ein, um Ihr Passwort zurückzusetzen.",
+    "email": "E-Mail",
+    "submit": "Absenden",
+    "cancel": "Abbrechen",
+    "errors": {
+      "emailRequired": "E-Mail ist erforderlich"
+    }
+  },
+  "signUp": {
+    "title": "Registrieren",
+    "subtitle": "Ihre Social-Kampagnen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "repeatPassword": "Passwort wiederholen",
+    "termsText": "Ich akzeptiere die",
+    "termsLink": "Allgemeinen Geschäftsbedingungen",
+    "submit": "Registrieren",
+    "loginPrompt": "Haben Sie bereits ein Konto?",
+    "loginLink": "Anmelden",
+    "errors": {
+      "emailRequired": "E-Mail ist erforderlich",
+      "passwordRequired": "Passwort ist erforderlich",
+      "confirmPasswordRequired": "Bitte bestätigen Sie das Passwort",
+      "termsRequired": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren",
+      "invalidFormat": "Das Format ist nicht korrekt",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein"
+    }
+  },
+  "twoFactor": {
+    "submit": "Absenden",
+    "noCode": "Code nicht erhalten?",
+    "resend": "Erneut senden",
+    "or": "oder",
+    "callUs": "Rufen Sie uns an"
+  },
+  "authAside": {
+    "title": "Schnell, effizient und produktiv",
+    "description": "In diesem Beitrag stellt der Blogger eine Person vor, die er interviewt hat, und gibt Hintergrundinformationen."
+  },
+  "footer": {
+    "terms": "Bedingungen",
+    "plans": "Pläne",
+    "contact": "Kontaktieren Sie uns"
+  },
+  "verificationCodeInputs": {
+    "title": "Zwei-Schritt-Verifizierung",
+    "instruction": "Geben Sie den Verifizierungscode ein, den wir an gesendet haben",
+    "masked": "******7859",
+    "inputInstruction1": "Geben Sie Ihren Sicherheitscode mit ",
+    "inputInstruction2": " Ziffern ein",
+    "error": "Bitte füllen Sie die Felder aus."
+  },
+  "pageTitles": {
+    "loginPage": "Anmelden",
+    "newPasswordPage": "Neues Passwort",
+    "resetPasswordPage": "Passwort zurücksetzen",
+    "signUpPage": "Registrieren",
+    "twoFactorPage": "Zwei-Schritt-Verifizierung"
+  }
+}

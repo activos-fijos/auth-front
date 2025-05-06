@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const AuthAside = () => {
+  const { t } = useTranslation();
   return (
     <div
       className="d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 order-lg-2"
@@ -22,12 +24,11 @@ const AuthAside = () => {
         />
 
         <h1 className="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">
-          Rápida, eficiente y productiva
+          {t("authAside.title")}
         </h1>
 
         <div className="d-none d-lg-block text-white fs-base text-center">
-          En este tipo de publicación, el bloguero presenta a una persona que ha
-          entrevistado y proporciona información de fondo.
+        {t("authAside.description")}
         </div>
       </div>
     </div>

@@ -5,9 +5,11 @@ import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
+import { useTranslation } from "react-i18next";
 
 const LoginPage = () => {
-  usePageTitle('Iniciar Sesión')
+  const { t } = useTranslation();
+  usePageTitle(t("pageTitles.loginPage"))
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">

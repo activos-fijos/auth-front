@@ -3,8 +3,10 @@ import Input from "../../common/Input";
 import PasswordInput from "../../common/PasswordInput";
 import isPasswordValid from "../../../hooks/passwordValidation";
 import Button from "../../common/Button";
+import { useTranslation } from "react-i18next";
 
 const SignUpForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,17 +33,18 @@ const SignUpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.email) newErrors.email = "El correo es requerido";
-    if (!formData.password) newErrors.password = "La contraseña es requerida";
+    if (!formData.email) newErrors.email = t("signUp.errors.emailRequired");
+    if (!formData.password)
+      newErrors.password = t("signUp.errors.passwordRequired");
     if (!formData.confirmPassword)
-      newErrors.confirmPassword = "Por favor verifica la contraseña";
+      newErrors.confirmPassword = t("signUp.errors.confirmPasswordRequired");
     if (!formData.termsAccepted)
-      newErrors.termsAccepted = "Debes aceptar los términos y condiciones";
+      newErrors.termsAccepted = t("signUp.errors.termsRequired");
 
     if (formData.password && !isPasswordValid(formData.password)) {
-      newErrors.password = "El formato no es correcto";
+      newErrors.password = t("signUp.errors.invalidFormat");
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Las contraseñas no coinciden";
+      newErrors.confirmPassword = t("signUp.errors.passwordMismatch");
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -54,14 +57,11 @@ const SignUpForm = () => {
   return (
     <div className="d-flex flex-center flex-column flex-lg-row-fluid">
       <div className="w-lg-500px p-10">
-        <form
-          className="form w-100"
-          id="kt_sign_up_form"
-        >
+        <form className="form w-100" id="kt_sign_up_form">
           <div className="text-center mb-11">
-            <h1 className="text-dark fw-bolder mb-3">Regístrate</h1>
+            <h1 className="text-dark fw-bolder mb-3">{t("signUp.title")}</h1>
             <div className="text-gray-500 fw-semibold fs-6">
-              Tus campañas sociales
+              {t("signUp.subtitle")}
             </div>
           </div>
 
@@ -69,7 +69,7 @@ const SignUpForm = () => {
             className="fv-row mb-8"
             type="email"
             name="email"
-            placeholder="Correo"
+            placeholder={t("signUp.email")}
             value={formData.email}
             onChange={handleChance}
             error={errors.email}
@@ -78,7 +78,7 @@ const SignUpForm = () => {
           <PasswordInput
             className="fv-row mb-8"
             name="password"
-            placeholder="Contraseña"
+            placeholder={t("signUp.password")}
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
@@ -88,7 +88,7 @@ const SignUpForm = () => {
           <PasswordInput
             className="fv-row mb-8"
             name="confirmPassword"
-            placeholder="Repetir contraseña"
+            placeholder={t("signUp.repeatPassword")}
             value={formData.confirmPassword}
             onChange={handleChance}
             error={errors.confirmPassword}
@@ -105,9 +105,9 @@ const SignUpForm = () => {
                 onChange={handleChance}
               />
               <span className="form-check-label fw-semibold text-gray-700 fs-base ms-1">
-                Yo acepto los
+                {t("signUp.termsText")}
                 <span className="ms-1 link-primary cursor-pointer">
-                  Términos y condiciones
+                  {t("signUp.termsLink")}
                 </span>
               </span>
             </label>
@@ -117,11 +117,11 @@ const SignUpForm = () => {
               </div>
             )}
           </div>
-          <Button label="Regístrate" onClick={handleSubmit} />
+          <Button label={t("signUp.submit")} onClick={handleSubmit} />
           <div className="text-gray-500 text-center fw-semibold fs-6">
-            ¿Ya tienes una cuenta?{" "}
+            {t("signUp.loginPrompt")}{" "}
             <a href="/" className="link-primary">
-              Iniciar sesión
+              {t("signUp.loginLink")}
             </a>
           </div>
         </form>

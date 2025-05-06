@@ -1,0 +1,94 @@
+{
+  "login": {
+    "title": "Iniciar sesión",
+    "subtitle": "Tus campañas sociales",
+    "email": "Correo",
+    "password": "Contraseña",
+    "forgotPassword": "¿Has olvidado tu contraseña?",
+    "submit": "Iniciar sesión",
+    "registerPrompt": "¿Aún no eres miembro?",
+    "registerLink": "Regístrate",
+    "errors": {
+      "emailRequired": "El correo es requerido",
+      "passwordRequired": "La contraseña es requerida"
+    }
+  },
+  "newPassword": {
+    "title": "Establecer nueva contraseña",
+    "subtitle": "¿Ya has restablecido la contraseña?",
+    "loginLink": "Iniciar sesión",
+    "password": "Contraseña",
+    "repeatPassword": "Repetir contraseña",
+    "termsText": "Yo acepto los",
+    "termsLink": "Términos y condiciones",
+    "": "Enviar",
+    "errors": {
+      "passwordRequired": "La contraseña es requerida",
+      "newPasswordRequired": "Por favor repite la contraseña",
+      "termsRequired": "Debes aceptar los términos y condiciones",
+      "invalidFormat": "El formato no es correcto",
+      "passwordMismatch": "Las contraseñas no coinciden"
+    }
+  },
+  "resetPassword": {
+    "title": "¿Has olvidado tu contraseña?",
+    "subtitle": "Ingresa tu correo electrónico para restablecer tu contraseña.",
+    "email": "Correo",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "errors": {
+      "emailRequired": "El correo es requerido"
+    }
+  },
+  "signUp": {
+    "title": "Regístrate",
+    "subtitle": "Tus campañas sociales",
+    "email": "Correo",
+    "password": "Contraseña",
+    "repeatPassword": "Repetir contraseña",
+    "termsText": "Yo acepto los",
+    "termsLink": "Términos y condiciones",
+    "submit": "Regístrate",
+    "loginPrompt": "¿Ya tienes una cuenta?",
+    "loginLink": "Iniciar sesión",
+    "errors": {
+      "emailRequired": "El correo es requerido",
+      "passwordRequired": "La contraseña es requerida",
+      "confirmPasswordRequired": "Por favor verifica la contraseña",
+      "termsRequired": "Debes aceptar los términos y condiciones",
+      "invalidFormat": "El formato no es correcto",
+      "passwordMismatch": "Las contraseñas no coinciden"
+    }
+  },
+  "twoFactor": {
+    "submit": "Enviar",
+    "noCode": "¿No recibiste el código?",
+    "resend": "Reenviar",
+    "or": "o",
+    "callUs": "Llámanos"
+  },
+  "authAside": {
+    "title": "Rápida, eficiente y productiva",
+    "description": "En este tipo de publicación, el bloguero presenta a una persona que ha entrevistado y proporciona información de fondo."
+  },
+  "footer": {
+    "terms": "Términos",
+    "plans": "Planes",
+    "contact": "Contacta con nosotros"
+  },
+  "verificationCodeInputs": {
+    "title": "Verificación de dos pasos",
+    "instruction": "Ingrese el código de verificación que le enviamos a",
+    "masked": "******7859",
+    "inputInstruction1": "Escriba su código de seguridad de ",
+    "inputInstruction2": " dígitos",
+    "error": "Por favor complete los campos."
+  },
+  "pageTitles":{
+    "loginPage": "Iniciar Sesión",
+    "newPasswordPage": "Nueva contraseña",
+    "resetPasswordPage": "Restablecer Contraseña",
+    "signUpPage": "Registrarse",
+    "twoFactorPage": "Verificación de dos paso"
+  }
+}

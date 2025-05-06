@@ -5,9 +5,11 @@ import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import AuthAside from '../auth/AuthAside';
 import usePageTitle from '../../hooks/usePageTitle';
+import { useTranslation } from "react-i18next";
 
 const ResetPasswordPage = () => {
-  usePageTitle('Restablecer Contraseña')
+  const { t } = useTranslation();
+  usePageTitle(t("pageTitles.resetPasswordPage"))
   return (
     <AuthLayout>
       <div className="d-flex flex-column flex-lg-row flex-column-fluid">

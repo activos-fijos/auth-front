@@ -5,9 +5,11 @@ import LanguageMenu from '../auth/LanguageMenu';
 import FooterLinks from '../auth/FooterLinks';
 import SignUpForm from '../auth/forms/SignUpForm';
 import usePageTitle from '../../hooks/usePageTitle';
+import { useTranslation } from "react-i18next";
 
 const SignUpPage = () => {
-  usePageTitle('Registrarse')
+  const { t } = useTranslation();
+  usePageTitle(t("pageTitles.signUpPage"))
     return (
       <AuthLayout>
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">

@@ -1,0 +1,94 @@
+{
+  "login": {
+    "title": "Log in",
+    "subtitle": "Your social campaigns",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot your password?",
+    "submit": "Log in",
+    "registerPrompt": "Not a member yet?",
+    "registerLink": "Sign up",
+    "errors": {
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required"
+    }
+  },
+  "newPassword": {
+    "title": "Set new password",
+    "subtitle": "Have you reset your password?",
+    "loginLink": "Log in",
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "termsText": "I accept the",
+    "termsLink": "Terms and conditions",
+    "": "Submit",
+    "errors": {
+      "passwordRequired": "Password is required",
+      "newPasswordRequired": "Please repeat the password",
+      "termsRequired": "You must accept the terms and conditions",
+      "invalidFormat": "The format is incorrect",
+      "passwordMismatch": "Passwords do not match"
+    }
+  },
+  "resetPassword": {
+    "title": "Forgot your password?",
+    "subtitle": "Enter your email to reset your password.",
+    "email": "Email",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "errors": {
+      "emailRequired": "Email is required"
+    }
+  },
+  "signUp": {
+    "title": "Sign up",
+    "subtitle": "Your social campaigns",
+    "email": "Email",
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "termsText": "I accept the",
+    "termsLink": "Terms and conditions",
+    "submit": "Sign up",
+    "loginPrompt": "Already have an account?",
+    "loginLink": "Log in",
+    "errors": {
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "confirmPasswordRequired": "Please confirm the password",
+      "termsRequired": "You must accept the terms and conditions",
+      "invalidFormat": "The format is incorrect",
+      "passwordMismatch": "Passwords do not match"
+    }
+  },
+  "twoFactor": {
+    "submit": "Submit",
+    "noCode": "Didn't receive the code?",
+    "resend": "Resend",
+    "or": "or",
+    "callUs": "Call us"
+  },
+  "authAside": {
+    "title": "Fast, efficient, and productive",
+    "description": "In this type of post, the blogger introduces a person they have interviewed and provides background information."
+  },
+  "footer": {
+    "terms": "Terms",
+    "plans": "Plans",
+    "contact": "Contact us"
+  },
+  "verificationCodeInputs": {
+    "title": "Two-step verification",
+    "instruction": "Enter the verification code we sent to",
+    "masked": "******7859",
+    "inputInstruction1": "Enter your security code of ",
+    "inputInstruction2": " digits",
+    "error": "Please complete the fields."
+  },
+  "pageTitles": {
+    "loginPage": "Log In",
+    "newPasswordPage": "New Password",
+    "resetPasswordPage": "Reset Password",
+    "signUpPage": "Sign Up",
+    "twoFactorPage": "Two-step Verification"
+  }
+}

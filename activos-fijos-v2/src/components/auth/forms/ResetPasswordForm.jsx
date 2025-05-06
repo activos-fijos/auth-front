@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Input from "../../common/Input";
 import Button from "../../common/Button";
+import { useTranslation } from "react-i18next";
 
 const ResetPasswordForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -20,7 +22,7 @@ const ResetPasswordForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.email) newErrors.email = "El correo es requerido";
+    if (!formData.email) newErrors.email = t("resetPassword.errors.emailRequired");
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -38,25 +40,25 @@ const ResetPasswordForm = () => {
         >
           <div className="text-center mb-10">
             <h1 className="text-dark fw-bolder mb-3">
-              ¿Has olvidado tu contraseña?
+              {t("resetPassword.title")}
             </h1>
             <div className="text-gray-500 fw-semibold fs-6">
-              Ingresa tu correo electrónico para restablecer tu contraseña.
+            {t("resetPassword.subtitle")}
             </div>
           </div>
           <Input
             className="fv-row mb-8"
             type="email"
             name="email"
-            placeholder="Correo"
+            placeholder={t("resetPassword.email")}
             value={formData.email}
             onChange={handleChance}
             error={errors.email}
           />
           <div className="d-flex flex-wrap justify-content-center pb-lg-0">
-            <Button label="Enviar" onClick={handleSubmit} />
+            <Button label={t("resetPassword.submit")} onClick={handleSubmit} />
             <a href="/" className="btn btn-light">
-              Cancelar
+            {t("resetPassword.cancel")}
             </a>
           </div>
         </form>
