@@ -25,8 +25,8 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.email) newErrors.email = t("login.errors.emailRequired");
-    if (!formData.password) newErrors.password = t("login.errors.passwordRequired");
+    if (!formData.email) newErrors.email = "login.errors.emailRequired";
+    if (!formData.password) newErrors.password = "login.errors.passwordRequired";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -52,7 +52,7 @@ const LoginForm = () => {
             placeholder={t("login.email")}
             value={formData.email}
             onChange={handleChance}
-            error={errors.email}
+            error={t(errors.email)}
           />
 
           <PasswordInput
@@ -61,7 +61,7 @@ const LoginForm = () => {
             placeholder={t("login.password")}
             value={formData.password}
             onChange={handleChance}
-            error={errors.password}
+            error={t(errors.password)}
           />
 
           <div className="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">

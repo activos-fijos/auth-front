@@ -31,15 +31,15 @@ const NewPasswordForm = () => {
     e.preventDefault();
     const newErrors = {};
     if (!formData.password)
-      newErrors.password = t("newPassword.errors.passwordRequired");
+      newErrors.password = "newPassword.errors.passwordRequired";
     if (!formData.newPassword)
-      newErrors.newPassword = t("newPassword.errors.newPasswordRequired");
+      newErrors.newPassword = "newPassword.errors.newPasswordRequired";
     if (!formData.termsAccepted)
-      newErrors.termsAccepted = t("newPassword.errors.termsRequired");
+      newErrors.termsAccepted = "newPassword.errors.termsRequired";
     if (formData.password && !isPasswordValid(formData.password)) {
-      newErrors.password = t("newPassword.errors.invalidFormat");
+      newErrors.password = "newPassword.errors.invalidFormat";
     } else if (formData.password !== formData.newPassword) {
-      newErrors.newPassword = t("newPassword.errors.passwordMismatch");
+      newErrors.newPassword = "newPassword.errors.passwordMismatch";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -58,7 +58,7 @@ const NewPasswordForm = () => {
               {t("newPassword.title")}
             </h1>
             <div className="text-gray-500 fw-semibold fs-6">
-              {t("newPassword.subtitle")}
+              {t("newPassword.subtitle")} { }
               <a href="/" className="link-primary fw-bold">
                 {t("newPassword.loginLink")}
               </a>
@@ -71,7 +71,7 @@ const NewPasswordForm = () => {
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
-            error={errors.password}
+            error={t(errors.password)}
           />
 
           <PasswordInput
@@ -80,13 +80,13 @@ const NewPasswordForm = () => {
             placeholder={t("newPassword.repeatPassword")}
             value={formData.newPassword}
             onChange={handleChance}
-            error={errors.newPassword}
+            error={t(errors.newPassword)}
           />
           <div className="fv-row mb-8">
             <label className="form-check form-check-inline">
               <input
                 className={`form-check-input ${
-                  errors.termsAccepted ? "is-invalid" : ""
+                  t(errors.termsAccepted) ? "is-invalid" : ""
                 }`}
                 type="checkbox"
                 name="termsAccepted"
@@ -102,7 +102,7 @@ const NewPasswordForm = () => {
             </label>
             {errors.termsAccepted && (
               <div className="invalid-feedback d-block">
-                {errors.termsAccepted}
+                {t(errors.termsAccepted)}
               </div> // ✅ Mostrar error
             )}
           </div>

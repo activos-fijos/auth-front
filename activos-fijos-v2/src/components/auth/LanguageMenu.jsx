@@ -59,6 +59,7 @@ const LanguageMenu = () => {
                 e.preventDefault();
                 setCurrentLanguage(lang);
                 i18n.changeLanguage(lang.code)
+                // window.location.reload();
               }}
             >
               <span className="symbol symbol-20px me-4">

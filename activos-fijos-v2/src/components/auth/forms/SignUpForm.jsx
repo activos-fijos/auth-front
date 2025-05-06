@@ -33,18 +33,18 @@ const SignUpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.email) newErrors.email = t("signUp.errors.emailRequired");
+    if (!formData.email) newErrors.email = "signUp.errors.emailRequired";
     if (!formData.password)
-      newErrors.password = t("signUp.errors.passwordRequired");
+      newErrors.password = "signUp.errors.passwordRequired";
     if (!formData.confirmPassword)
-      newErrors.confirmPassword = t("signUp.errors.confirmPasswordRequired");
+      newErrors.confirmPassword = "signUp.errors.confirmPasswordRequired";
     if (!formData.termsAccepted)
-      newErrors.termsAccepted = t("signUp.errors.termsRequired");
+      newErrors.termsAccepted = "signUp.errors.termsRequired";
 
     if (formData.password && !isPasswordValid(formData.password)) {
-      newErrors.password = t("signUp.errors.invalidFormat");
+      newErrors.password = "signUp.errors.invalidFormat";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = t("signUp.errors.passwordMismatch");
+      newErrors.confirmPassword = "signUp.errors.passwordMismatch";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -72,7 +72,7 @@ const SignUpForm = () => {
             placeholder={t("signUp.email")}
             value={formData.email}
             onChange={handleChance}
-            error={errors.email}
+            error={t(errors.email)}
           />
 
           <PasswordInput
@@ -82,7 +82,7 @@ const SignUpForm = () => {
             value={formData.password}
             onChange={handleChance}
             showMeter={true}
-            error={errors.password}
+            error={t(errors.password)}
           />
 
           <PasswordInput
@@ -91,13 +91,13 @@ const SignUpForm = () => {
             placeholder={t("signUp.repeatPassword")}
             value={formData.confirmPassword}
             onChange={handleChance}
-            error={errors.confirmPassword}
+            error={t(errors.confirmPassword)}
           />
           <div className="fv-row mb-8">
             <label className="form-check form-check-inline">
               <input
                 className={`form-check-input ${
-                  errors.termsAccepted ? "is-invalid" : ""
+                  t(errors.termsAccepted) ? "is-invalid" : ""
                 }`}
                 type="checkbox"
                 name="termsAccepted"
@@ -113,7 +113,7 @@ const SignUpForm = () => {
             </label>
             {errors.termsAccepted && (
               <div className="invalid-feedback d-block">
-                {errors.termsAccepted}
+                {t(errors.termsAccepted)}
               </div>
             )}
           </div>

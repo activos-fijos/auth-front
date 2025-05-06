@@ -22,7 +22,7 @@ const ResetPasswordForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.email) newErrors.email = t("resetPassword.errors.emailRequired");
+    if (!formData.email) newErrors.email = "resetPassword.errors.emailRequired";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -53,7 +53,7 @@ const ResetPasswordForm = () => {
             placeholder={t("resetPassword.email")}
             value={formData.email}
             onChange={handleChance}
-            error={errors.email}
+            error={t(errors.email)}
           />
           <div className="d-flex flex-wrap justify-content-center pb-lg-0">
             <Button label={t("resetPassword.submit")} onClick={handleSubmit} />
